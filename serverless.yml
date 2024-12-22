@@ -1,0 +1,16 @@
+service: garys-products-ui-codedeploymentbucket
+provider:
+  name: aws
+  region: us-west-2
+  stage: dev
+resources:
+  Resources:
+    codeDeploymentBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: garys-products-ui-codedeploymentbucket-${self:provider.stage}
+        # DeletionPolicy: Retain
+  Outputs:
+    CodeDeploymentBucket:
+      Description: garys-products-ui-codedeploymentbucket-${self:provider.stage}
+      Value: !Ref codeDeploymentBucket

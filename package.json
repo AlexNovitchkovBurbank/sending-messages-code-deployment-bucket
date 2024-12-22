@@ -1,0 +1,12 @@
+{
+  "name": "garys-products-ui-deploymentbucket",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "sls package -s dev",
+    "dp:lcl": "sls deploy --verbose -s dev",
+    "rm:lcl": "sls remove -s dev"
+  },
+  "author": "",
+  "license": "ISC"
+}

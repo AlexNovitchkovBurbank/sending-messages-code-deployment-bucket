@@ -1,4 +1,4 @@
-service: garys-products-ui-codedeploymentbucket
+service: sending-messages-codedeployment-bucket
 provider:
   name: aws
   region: us-west-2
@@ -8,9 +8,11 @@ resources:
     codeDeploymentBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: garys-products-ui-codedeploymentbucket-${self:provider.stage}
+        BucketName: sending-messages-codedeployment-bucket-${self:provider.stage}
         # DeletionPolicy: Retain
   Outputs:
-    CodeDeploymentBucket:
-      Description: garys-products-ui-codedeploymentbucket-${self:provider.stage}
-      Value: !Ref codeDeploymentBucket
+    CodeDeploymentBucketName:
+      Value:
+        Ref: codeDeploymentBucket
+      Export:
+        Name: "sending-messages-codedeployment-bucket-${self:provider.stage}-name"

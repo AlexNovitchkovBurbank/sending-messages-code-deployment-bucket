@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "test": "sls package -s dev",
-    "dp:lcl": "sls deploy --verbose -s dev",
-    "rm:lcl": "sls remove -s dev"
+    "dp:np:w": "sls deploy --verbose -r us-west-2 -s dev",
+    "rm:np:w": "sls remove -r us-west-2 -s dev"
   },
   "author": "",
   "license": "ISC"

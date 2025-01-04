@@ -10,6 +10,22 @@ resources:
       Properties:
         BucketName: sending-messages-codedeployment-bucket-${self:provider.stage}
         # DeletionPolicy: Retain
+        CorsConfiguration:
+          CorsRules:
+            - AllowedHeaders:
+                - 'Content-Type'
+              AllowedMethods:
+                - GET
+                - HEAD
+              AllowedOrigins:
+                - '*'
+              ExposedHeaders:
+                - Date
+        PublicAccessBlockConfiguration:
+          RestrictPublicBuckets: true
+          BlockPublicAcls: true
+          BlockPublicPolicy: true
+          IgnorePublicAcls: true
   Outputs:
     CodeDeploymentBucketName:
       Value:
